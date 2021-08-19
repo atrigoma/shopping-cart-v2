@@ -26,6 +26,19 @@ pipeline {
 	   }
 
 	}
+        stage ('Build'){
+	   steps{
+	      echo 'Executing build...'
+	      try {
+
+	         sh './mvnw package -D skipTests'
+	      }
+	      catch (ex) {
+	         echo 'Error while build the JAR'
+		 throw ex
+	      }
+	   }
+	}
    }
 
 
