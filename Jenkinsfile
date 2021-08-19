@@ -15,7 +15,7 @@ pipeline {
 	      }
 	      stage('Integration Test'){
 	         when {
-		    expression {RUN_INTEGRATION_TESTS}
+		    expression {params.RUN_INTEGRATION_TESTS}
 		 }
 		 steps{
 	            echo 'Executin Integration Test...'
