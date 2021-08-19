@@ -11,6 +11,7 @@ pipeline {
 	      stage('Unit Test'){
 	         steps {
   	            echo 'Executing Unit Test...'
+		    sh './mvnw test -D testGroups=unit'
 		 }
 	      }
 	      stage('Integration Test'){
@@ -19,6 +20,7 @@ pipeline {
 		 }
 		 steps{
 	            echo 'Executin Integration Test...'
+		    sh './mvnw test -D testGroups=integration'
 		 }
 	      }
 	   }
