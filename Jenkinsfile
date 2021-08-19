@@ -7,7 +7,7 @@ pipeline {
 
    stages{
    	stage ('Test'){
-	   paralel {
+	   parallel {
 	      stage('Unit Test'){
 	         echo 'Executing Unit Test...'
 	      }
